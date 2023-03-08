@@ -16,3 +16,11 @@ class Pacijent {
     this.labPregledi = [];
   }
 }
+
+class LabPregled {
+  constructor(datum, tip, rezultat) {
+    this.datum = datum;
+    this.tip = tip;
+    this.rezultat = rezultat;
+  }
+}
