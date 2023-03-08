@@ -27,6 +27,16 @@ class Pacijent {
     this.doktor = null;
     this.labPregledi = [];
   }
+  izaberiDoktora(pacijent, doktor) {
+    this.doktor = doktor;
+    doktor.pacijenti.push(pacijent);
+    console.log(
+      `Doktor ${doktor.ime} ${doktor.prezime} je izabran doktor za pacijenta  ${this.ime} ${this.prezime}.`
+    );
+    logAction(
+      `Doktor ${doktor.ime} ${doktor.prezime} je izabran doktor za pacijenta  ${this.ime} ${this.prezime}.`
+    );
+  }
 }
 
 class LabPregled {
