@@ -24,3 +24,26 @@ class LabPregled {
     this.rezultat = rezultat;
   }
 }
+class KrvniPritisak extends LabPregled {
+  constructor(datum, tip, rezultat, gornjaVrednost, donjaVrednost, puls) {
+    super(datum, tip, rezultat);
+    this.gornjaVrednost = gornjaVrednost;
+    this.donjaVrednost = donjaVrednost;
+    this.puls = puls;
+    this.rezultat = `${this.gornjaVrednost}/${this.donjaVrednost}, puls je: ${this.puls}`;
+  }
+}
+
+class NivoSeceraUKrvi extends LabPregled {
+  constructor(datum, tip, rezultat, vremePoslednjegObroka) {
+    super(datum, tip, rezultat);
+    this.vremePoslednjegObroka = vremePoslednjegObroka;
+  }
+}
+
+class NivoHolesterolaUKrvi extends LabPregled {
+  constructor(datum, tip, rezultat, vremePoslednjegObroka) {
+    super(datum, tip, rezultat);
+    this.vremePoslednjegObroka = vremePoslednjegObroka;
+  }
+}
