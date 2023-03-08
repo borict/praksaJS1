@@ -37,6 +37,15 @@ class Pacijent {
       `Doktor ${doktor.ime} ${doktor.prezime} je izabran doktor za pacijenta  ${this.ime} ${this.prezime}.`
     );
   }
+
+  obaviPregled(tipPregleda, rezultat) {
+    console.log(
+      `Pacijent ${this.ime} ${this.prezime} obavlja pregled ${tipPregleda} i rezultat je ${rezultat}.`
+    );
+    logAction(
+      `Pacijent ${this.ime} ${this.prezime} obavlja pregled ${tipPregleda} i rezultat je ${rezultat}.`
+    );
+  }
 }
 
 class LabPregled {
