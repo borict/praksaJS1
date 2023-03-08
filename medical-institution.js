@@ -7,6 +7,16 @@ class Doktor {
     this.specijalizacija = specijalizacija;
     this.pacijenti = [];
   }
+  zakaziPregled(pacijent, tipTesta, datumTesta) {
+    let labPregled = new LabPregled(tipTesta, datumTesta);
+    pacijent.labPregledi.push(labPregled);
+    console.log(
+      `Zakazan pregled ${tipTesta.tip} za pacijenta: ${pacijent.ime} ${pacijent.prezime}, termin je: ${datumTesta}.`
+    );
+    logAction(
+      `Zakazan pregled ${tipTesta.tip} za pacijenta: ${pacijent.ime} ${pacijent.prezime}, termin je: ${datumTesta}.`
+    );
+  }
 }
 class Pacijent {
   constructor(ime, prezime, jmbg, brojKartona) {
