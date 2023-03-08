@@ -6,3 +6,13 @@ class Doktor {
     this.pacijenti = [];
   }
 }
+class Pacijent {
+  constructor(ime, prezime, jmbg, brojKartona) {
+    this.ime = ime;
+    this.prezime = prezime;
+    this.jmbg = jmbg;
+    this.brojKartona = brojKartona;
+    this.doktor = null;
+    this.labPregledi = [];
+  }
+}
