@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 class Doktor {
   constructor(ime, prezime, specijalizacija) {
     this.ime = ime;
@@ -46,4 +48,10 @@ class NivoHolesterolaUKrvi extends LabPregled {
     super(datum, tip, rezultat);
     this.vremePoslednjegObroka = vremePoslednjegObroka;
   }
+}
+
+function logAction(action) {
+  const now = new Date();
+  const timestamp = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+  fs.appendFileSync("tp.txt", `[${timestamp}] ${action}\n`);
 }
