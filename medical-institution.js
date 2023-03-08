@@ -84,3 +84,42 @@ function logAction(action) {
   const timestamp = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
   fs.appendFileSync("tp.txt", `[${timestamp}] ${action}\n`);
 }
+
+const milan = new Doktor("Milan", "Bajic", "kardiolog");
+console.log(`Kreiran je doktor ${milan.ime} ${milan.prezime}`);
+logAction(
+  `Kreiran je doktor:  ${milan.ime} ${milan.prezime}, specijalizalizacija:  ${milan.specijalizacija}.`
+);
+
+const dragan = new Pacijent("Dragan", "Kojic", 1234567891234, 12345678912);
+console.log(`Kreiran je pacijent ${dragan.ime} ${dragan.prezime}`);
+logAction(
+  `Kreiran je pacijent:  ${dragan.ime} ${dragan.prezime}, jmbg: ${dragan.jmbg}, broj kartona: ${dragan.brojKartona}.`
+);
+
+const datum1 = "08.03.2023 09:00";
+const datum2 = "09.03.2023 15:00";
+const poslednjiObrok = "07:00";
+
+const krvniPritisak = new KrvniPritisak(
+  datum1,
+  "Krvni pritisak",
+  0,
+  140,
+  90,
+  85
+);
+const nivoSeceraUKrvi = new NivoSeceraUKrvi(
+  datum2,
+  "Nivo secera u krvi",
+  7,
+  poslednjiObrok
+);
+
+dragan.izaberiDoktora(dragan, milan);
+
+milan.zakaziPregled(dragan, nivoSeceraUKrvi, nivoSeceraUKrvi.datum);
+dragan.obaviPregled(nivoSeceraUKrvi.tip, nivoSeceraUKrvi.rezultat);
+
+milan.zakaziPregled(dragan, krvniPritisak, datum2);
+dragan.obaviPregled(krvniPritisak.tip, krvniPritisak.rezultat);
